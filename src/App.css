@@ -25,9 +25,34 @@ h1{
   text-align: right;
 }
 
-
-
 .div-footer{
+  background-color: orange!important;
+}
+
+.div_logo{
+
   text-align: center;
-  background-color: blueviolet;
+  display: block;
+  justify-content: center;
+  margin: 0;
+  width: 20%;
+}
+.div_information{
+  
+  text-align: center;
+  display: block;
+  justify-content: center;
+  margin: right;
+  width: 20%;
+}
+
+.container {
+  text-align: center;
+  
+  
+}
+
+.row {
+  margin-block: 15px;
+  position: center;
 }

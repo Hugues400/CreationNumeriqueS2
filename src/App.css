@@ -12,47 +12,70 @@
   }
 }
 
-
 .App {
   text-align: center;
 }
 
-h1{
+.div-header {
   text-align: center;
 }
 
-.titre1{
-  text-align: right;
+.div-titre-page {
+  text-align: center;
+  background-image: url(image_genesis.png);
+  background-size :100%;
+  background-repeat: no-repeat;
+ 
+  
+}
+
+.titre_page {
+  color: white!important;
+  
+}
+
+.div-nav{
+  align-content: center;
+  background-color: lightgreen;
+}
+
+.link-nav {
+  color: black;
+}
+
+.div-content{
+  background-color: blueviolet;
 }
 
 .div-footer{
   background-color: orange!important;
 }
 
-.div_logo{
+.div-logo{
 
   text-align: center;
   display: block;
-  justify-content: center;
+  
   margin: 0;
-  width: 20%;
+  
 }
-.div_information{
+.div-information{
   
   text-align: center;
   display: block;
-  justify-content: center;
-  margin: right;
-  width: 20%;
+  
 }
 
 .container {
   text-align: center;
+  margin-left: 0%;
+  margin-right: 0%;
+  justify-content: center;
   
   
 }
 
 .row {
-  margin-block: 15px;
+  
   position: center;
 }

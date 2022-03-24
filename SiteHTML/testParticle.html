@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale"
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>Animation</title>
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+            
+        }
+
+        #canvas1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background : linear-gradient(black,rgb(6, 6, 83),rgb(8, 8, 68));
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <canvas id="canvas1"></canvas>
+
+    <script type="text/javascript">
+    const canvas = document.getElementById("canvas1");
+    const ctx = canvas.getContext('2d');
+    ctx.canvas.width = window.innerWidth;
+    ctx.canvas.height = window.innerHeight;
+
+    let particleArray;
+    let particle3Array; // forme 3
+    let particle2Array; // forme 2
+    let particle1Array; // forme 1
+    let particleCircleArray; // forme 4
+    let particleDroneArray; // forme 5
+    let count=0;
+    let particle2xxxYearArray;
+    let particlexx2xYearArray;
+    let particlexxx2YearArray;
+    let particlex0xxYearArray;
+    let particleLineArray;
+
+    function Particle(x,y,directionX, directionY, size,color, shadowColor, globalAlpha){
+        this.x=x;
+        this.y=y;
+        this.directionX=directionX;
+        this.directionY = directionY;
+        this.size = size;
+        this.color = color;
+        this.shadowColor = shadowColor;
+        this.globalAlpha = globalAlpha;
+
+    }
+    //dessine le cercle
+    Particle.prototype.draw = function(){
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI*2, false);
+        ctx.fillStyle = this.color;
+        ctx.shadowColor = this.shadowColor;
+        ctx.shadowBlur = 30;
+        ctx.globalAlpha = this.globalAlpha;
+        ctx.fill();
+    }
+    //update function
+    Particle.prototype.update = function(){
+        if(this.x +this.size > canvas.width || this.x-this.size<0)
+        {
+            this.directionX = -this.directionX;
+        }
+        if(this.y +this.size > canvas.height || this.y-this.size<0)
+        {   this.directionY = -this.directionY;
+        }
+        this.x +=this.directionX;
+        this.y +=this.directionY;
+        this.draw();
+    }
+
+    //create Particle -> changer les caracteristiques
+    function init(){
+        particleArray =[];
+        particle3Array =[]; //Array de la forme 3
+        particle2Array =[]; // Array de la forme 2
+        particle1Array =[];// Array de la forme 1
+        particleCircleArray =[];// Array du smiley
+        particleDroneArray =[];// Array du drone
+        particle2xxxYearArray =[];
+        particlexx2xYearArray =[];
+        particlexxx2YearArray =[];
+        particlex0xxYearArray =[];
+        particleLineArray =[];
+
+
+        for(let i=0; i<100; i++){
+            let size =Math.random()*15;
+            let x = Math.random() * (innerWidth -size *2);
+            let y = Math.random()*(innerHeight -size *2);
+            let directionX = (Math.random()* 0.6)- 0.2;
+            let directionY = (Math.random()* 0.6)- 0.2;
+            let color ='cyan';
+            let shadowColor = 'cyan';
+            let globalAlpha = 1;
+
+            particleArray.push(new Particle(x,y,directionX, directionY, size, color, shadowColor, globalAlpha));
+        }
+    }
+
+    function stars()
+    {
+        for(let i=0; i<20; i++){
+            let size =2;
+            let x = Math.random() * (innerWidth -size *2);
+            let y = Math.random()*(innerHeight -size *2);
+            let directionX = 0;
+            let directionY = 0;
+            let color ='yellow';
+            let shadowColor ='yellow';
+            let globalAlpha =1;
+
+            particleArray.push(new Particle(x,y,directionX, directionY, size, color, shadowColor, globalAlpha));
+        }
+    }
+
+    //animation
+    function animate(){
+        requestAnimationFrame(animate);
+        ctx.clearRect(0,0,innerWidth,innerHeight);
+
+        for(let i=0; i<particleArray.length; i++){
+            particleArray[i].update();
+            if(count> 200 && particleArray[i].color =='cyan' && count<800)
+            {
+                particleArray[i].color = 'rgba(0,255,255,0)'; //faire disparaitres les bleues
+            }
+        }
+        if(count>200 && count<299){
+            // dessine le 3
+            for(let i=0;i<11;i++){
+                     particle3Array.push(new Particle(innerWidth/2+60,100+i*60,0, 0, 10, 'red', 'red',1));
+                     particle3Array[i].update();
+                     if(i%2==0)
+                     {
+                        particle3Array.push(new Particle(innerWidth/2,100+i*60,0, 0, 10, 'red', 'red',1));
+                        particle3Array[i].update();
+                        particle3Array.push(new Particle(innerWidth/2-60,100+i*60,0, 0, 10, 'red', 'red',1));
+                        particle3Array[i].update();
+                     }
+                 }
+        }
+        else if(count>320 && count<419){
+             //dessine le 2
+             particle2Array.push(new Particle((innerWidth/2)-60,100,0, 0, 10, 'red', 'red',1));
+             particle2Array[0].update();
+             particle2Array.push(new Particle(innerWidth/2,100,0, 0, 10, 'red', 'red',1));
+             particle2Array[1].update();
+             particle2Array.push(new Particle((innerWidth/2)+60,100,0, 0, 10, 'red', 'red',1));
+             particle2Array[2].update();
+
+             particle2Array.push(new Particle((innerWidth/2)+60,160,0, 0, 10, 'red', 'red',1));
+             particle2Array[3].update();
+
+             particle2Array.push(new Particle((innerWidth/2)+60,220,0, 0, 10, 'red', 'red',1));
+             particle2Array[4].update();
+             particle2Array.push(new Particle(innerWidth/2,220,0, 0, 10, 'red', 'red',1));
+             particle2Array[5].update();
+             particle2Array.push(new Particle((innerWidth/2)-60,220,0, 0, 10, 'red', 'red',1));
+             particle2Array[6].update();
+
+             particle2Array.push(new Particle((innerWidth/2)-60,280,0, 0, 10, 'red', 'red',1));
+             particle2Array[7].update();
+
+             particle2Array.push(new Particle((innerWidth/2)-60,340,0, 0, 10, 'red', 'red',1));
+             particle2Array[8].update();
+             particle2Array.push(new Particle(innerWidth/2,340,0, 0, 10, 'red', 'red',1));
+             particle2Array[9].update();
+             particle2Array.push(new Particle((innerWidth/2)+60,340,0, 0, 10, 'red', 'red',1));
+             particle2Array[10].update();
+        }
+        else if(count>440 && count<540){
+             //dessine le 1
+                 for(let i=0;i<6;i++){
+                     particle1Array.push(new Particle(innerWidth/2,100+i*60,0, 0, 10, 'red', 'red',1));
+                     particle1Array[i].update();
+                 }
+                 particle1Array.push(new Particle(innerWidth/2-60,100+60,0, 0, 10, 'red', 'red',1));
+                 particle1Array[6].update();
+                 particle1Array.push(new Particle(innerWidth/2-120,100+120,0, 0, 10, 'red', 'red',1));
+                 particle1Array[7].update();
+        }
+        else if(count>960 && count<1340){
+            //DESSINE le smiley cercle
+            for(let i=0;i<9;i++){
+                     particleCircleArray.push(new Particle(innerWidth/3+i*60,310+Math.sin(i*0.4)*150,0, 0, 10, 'green', 'yellow',1));
+                     particleCircleArray[i].update(); 
+            }
+            for(let i=9;i<18;i++){
+                     particleCircleArray.push(new Particle(innerWidth/3+(i-9)*60,250+Math.sin((i-9)*-0.4)*150,0, 0, 10, 'green', 'yellow',1));
+                     particleCircleArray[i].update();
+            }
+            for(let i=18;i<21;i++){
+                     particleCircleArray.push(new Particle(innerWidth/3 +140,220+(i-18)*20,0, 0, 10, 'white', 'white',1));
+                     particleCircleArray[i].update();
+                 }
+            for(let i=21;i<24 ;i++){
+                     particleCircleArray.push(new Particle(innerWidth/3 +340,220+(i-21)*20,0, 0, 10, 'white', 'white',1));
+                     particleCircleArray[i].update();
+                 }
+             for(let i=24;i<28;i++){
+                      if(i==25 || i==26){
+                      particleCircleArray.push(new Particle(innerWidth/3+ (i-24)*20+210,370,0, 0, 10, 'white', 'white',1));
+                      }else{
+                         particleCircleArray.push(new Particle(innerWidth/3+ (i-24)*20+210,360,0, 0, 10, 'white', 'white',1));
+                          }    particleCircleArray[i].update();
+                }
+        }
+        else if(count>560 && count<940){
+                //allume les anciens drones
+            for(let i=0; i<particleArray.length/5; i++){
+             particleArray[i].update();
+             if(count> 200 && particleArray[i].color =='rgba(0,255,255,0)')
+             {
+                 particleArray[i].color = 'cyan'; 
+                 particleArray[i].size = 4;
+             }
+            }
+                //DESSINER UN DRONE BLANC
+                for(let i=0;i<6;i++){     //dessine les moteurs
+                     if(i<3){
+                     particleDroneArray.push(new Particle(innerWidth/3+i*30+50,200,0, 0, 10, 'white', 'white',1));
+                     particleDroneArray[i].update();
+                     }else{
+                     particleDroneArray.push(new Particle(2*innerWidth/3-i*30+4+50,200,0, 0, 10, 'white', 'white',1));
+                     particleDroneArray[i].update();}
+                }
+                particleDroneArray.push(new Particle(innerWidth/3+30+50,230,0, 0, 10, 'white', 'white',1));
+                particleDroneArray[6].update();
+                particleDroneArray.push(new Particle(2*(innerWidth/3)-4*30+4+50,230,0, 0, 10, 'white', 'white',1));
+                particleDroneArray[7].update();
+                //le corps -------------------------------------------------
+                for(let i=8;i<18;i++){     
+                     particleDroneArray.push(new Particle(innerWidth/3+(i-7)*31+50,260,0, 0, 10, 'white', 'white',1));
+                     particleDroneArray[i].update();
+                }
+                for(let i=18;i<26;i++){     
+                     particleDroneArray.push(new Particle(innerWidth/3+(i-16)*31+50,290,0, 0, 10, 'white', 'white',1));
+                     particleDroneArray[i].update();
+                }
+                //les trains d'atterissage -------------------------------------------------
+                for(let i=26;i<30;i++){
+                     particleDroneArray.push(new Particle(innerWidth/3+3*31+50,320+(i-26)*30,0, 0, 10, 'white', 'white',1));
+                     particleDroneArray[i].update();
+                }
+                for(let i=30;i<34;i++){
+                     particleDroneArray.push(new Particle(2*innerWidth/3-6*31+50,320+(i-30)*30,0, 0, 10, 'white', 'white',1));
+                     particleDroneArray[i].update();
+                }
+
+                //fait bouger le drone
+                for(let i=0;i<particleDroneArray.length;i++){
+                    particleDroneArray[i].directionY = Math.sin(count*0.1)*0.2;
+                    particleDroneArray[i].directionX = Math.sin(count*0.05)*3;
+                }
+                
+        }
+        else if(count>1360){
+        //DESSINER 2022 avec des points lumineux qui changent de couleur ------------------------
+        // le premier 2 
+             particle2xxxYearArray.push(new Particle((innerWidth/4)-60,100,0, 0, 10, 'red', 'red',1));
+             particle2xxxYearArray[0].update();
+             particle2xxxYearArray.push(new Particle(innerWidth/4,100,0, 0, 10, 'red', 'red',1));
+             particle2xxxYearArray[1].update();
+             particle2xxxYearArray.push(new Particle((innerWidth/4)+60,100,0, 0, 10, 'red', 'red',1));
+             particle2xxxYearArray[2].update();
+
+             particle2xxxYearArray.push(new Particle((innerWidth/4)+60,160,0, 0, 10, 'red', 'red',1));
+             particle2xxxYearArray[3].update();
+
+             particle2xxxYearArray.push(new Particle((innerWidth/4)+60,220,0, 0, 10, 'red', 'red',1));
+             particle2xxxYearArray[4].update();
+             particle2xxxYearArray.push(new Particle(innerWidth/4,220,0, 0, 10, 'red', 'red',1));
+             particle2xxxYearArray[5].update();
+             particle2xxxYearArray.push(new Particle((innerWidth/4)-60,220,0, 0, 10, 'red', 'red',1));
+             particle2xxxYearArray[6].update();
+
+             particle2xxxYearArray.push(new Particle((innerWidth/4)-60,280,0, 0, 10, 'red', 'red',1));
+             particle2xxxYearArray[7].update();
+
+             particle2xxxYearArray.push(new Particle((innerWidth/4)-60,340,0, 0, 10, 'red', 'red',1));
+             particle2xxxYearArray[8].update();
+             particle2xxxYearArray.push(new Particle(innerWidth/4,340,0, 0, 10, 'red', 'red',1));
+             particle2xxxYearArray[9].update();
+             particle2xxxYearArray.push(new Particle((innerWidth/4)+60,340,0, 0, 10, 'red', 'red',1));
+             particle2xxxYearArray[10].update();
+
+        
+             //dessine le 0
+             particlex0xxYearArray.push(new Particle(2*(innerWidth/4)-60-100,100,0, 0, 10, 'red', 'red',1));
+             particlex0xxYearArray[0].update();
+             particlex0xxYearArray.push(new Particle(2*innerWidth/4-100,100,0, 0, 10, 'red', 'red',1));
+             particlex0xxYearArray[1].update();
+             particlex0xxYearArray.push(new Particle(2*(innerWidth/4)+60-100,100,0, 0, 10, 'red', 'red',1));
+             particlex0xxYearArray[2].update();
+
+             particlex0xxYearArray.push(new Particle(2*(innerWidth/4)+60-100,160,0, 0, 10, 'red', 'red',1));
+             particlex0xxYearArray[3].update();
+
+             particlex0xxYearArray.push(new Particle(2*(innerWidth/4)+60-100,220,0, 0, 10, 'red', 'red',1));
+             particlex0xxYearArray[4].update();
+             particlex0xxYearArray.push(new Particle(2*innerWidth/4-100-60,160,0, 0, 10, 'red', 'red',1));
+             particlex0xxYearArray[5].update();
+             particlex0xxYearArray.push(new Particle(2*(innerWidth/4)-60-100,220,0, 0, 10, 'red', 'red',1));
+             particlex0xxYearArray[6].update();
+
+             particlex0xxYearArray.push(new Particle(2*(innerWidth/4)-60-100,280,0, 0, 10, 'red', 'red',1));
+             particlex0xxYearArray[7].update();
+
+             particlex0xxYearArray.push(new Particle(2*(innerWidth/4)-60-100,340,0, 0, 10, 'red', 'red',1));
+             particlex0xxYearArray[8].update();
+             particlex0xxYearArray.push(new Particle(2*innerWidth/4-100,340,0, 0, 10, 'red', 'red',1));
+             particlex0xxYearArray[9].update();
+             particlex0xxYearArray.push(new Particle(2*(innerWidth/4)+60-100,340,0, 0, 10, 'red', 'red',1));
+             particlex0xxYearArray[10].update();
+             particlex0xxYearArray.push(new Particle(2*(innerWidth/4)+60-100,280,0, 0, 10, 'blue', 'blue',1));
+             particlex0xxYearArray[11].update();
+
+             //dessine le deuxieme 2
+             particlexx2xYearArray.push(new Particle(3*(innerWidth/4)-60-200,100,0, 0, 10, 'red', 'red',1));
+             particlexx2xYearArray[0].update();
+             particlexx2xYearArray.push(new Particle(3*innerWidth/4-200,100,0, 0, 10, 'red', 'red',1));
+             particlexx2xYearArray[1].update();
+             particlexx2xYearArray.push(new Particle(3*(innerWidth/4)+60-200,100,0, 0, 10, 'red', 'red',1));
+             particlexx2xYearArray[2].update();
+
+             particlexx2xYearArray.push(new Particle(3*(innerWidth/4)+60-200,160,0, 0, 10, 'red', 'red',1));
+             particlexx2xYearArray[3].update();
+
+             particlexx2xYearArray.push(new Particle(3*(innerWidth/4)+60-200,220,0, 0, 10, 'red', 'red',1));
+             particlexx2xYearArray[4].update();
+             particlexx2xYearArray.push(new Particle(3*innerWidth/4-200,220,0, 0, 10, 'red', 'red',1));
+             particlexx2xYearArray[5].update();
+             particlexx2xYearArray.push(new Particle(3*(innerWidth/4)-60-200,220,0, 0, 10, 'red', 'red',1));
+             particlexx2xYearArray[6].update();
+
+             particlexx2xYearArray.push(new Particle(3*(innerWidth/4)-60-200,280,0, 0, 10, 'red', 'red',1));
+             particlexx2xYearArray[7].update();
+
+             particlexx2xYearArray.push(new Particle(3*(innerWidth/4)-60-200,340,0, 0, 10, 'red', 'red',1));
+             particlexx2xYearArray[8].update();
+             particlexx2xYearArray.push(new Particle(3*innerWidth/4-200,340,0, 0, 10, 'red', 'red',1));
+             particlexx2xYearArray[9].update();
+             particlexx2xYearArray.push(new Particle(3*(innerWidth/4)+60-200,340,0, 0, 10, 'red', 'red',1));
+             particlexx2xYearArray[10].update();
+
+             //dessine le troisieme 2
+             particlexxx2YearArray.push(new Particle(4*(innerWidth/4)-60-300,100,0, 0, 10, 'red', 'red',1));
+             particlexxx2YearArray[0].update();
+             particlexxx2YearArray.push(new Particle(4*innerWidth/4-300,100,0, 0, 10, 'red', 'red',1));
+             particlexxx2YearArray[1].update();
+             particlexxx2YearArray.push(new Particle(4*(innerWidth/4)+60-300,100,0, 0, 10, 'red', 'red',1));
+             particlexxx2YearArray[2].update();
+
+             particlexxx2YearArray.push(new Particle(4*(innerWidth/4)+60-300,160,0, 0, 10, 'red', 'red',1));
+             particlexxx2YearArray[3].update();
+
+             particlexxx2YearArray.push(new Particle(4*(innerWidth/4)+60-300,220,0, 0, 10, 'red', 'red',1));
+             particlexxx2YearArray[4].update();
+             particlexxx2YearArray.push(new Particle(4*innerWidth/4-300,220,0, 0, 10, 'red', 'red',1));
+             particlexxx2YearArray[5].update();
+             particlexxx2YearArray.push(new Particle(4*(innerWidth/4)-60-300,220,0, 0, 10, 'red', 'red',1));
+             particlexxx2YearArray[6].update();
+
+             particlexxx2YearArray.push(new Particle(4*(innerWidth/4)-60-300,280,0, 0, 10, 'red', 'red',1));
+             particlexxx2YearArray[7].update();
+
+             particlexxx2YearArray.push(new Particle(4*(innerWidth/4)-60-300,340,0, 0, 10, 'red', 'red',1));
+             particlexxx2YearArray[8].update();
+             particlexxx2YearArray.push(new Particle(4*innerWidth/4-300,340,0, 0, 10, 'red', 'red',1));
+             particlexxx2YearArray[9].update();
+             particlexxx2YearArray.push(new Particle(4*(innerWidth/4)+60-300,340,0, 0, 10, 'red', 'red',1));
+             particlexxx2YearArray[10].update();
+
+             for(let i=0;i<particle2xxxYearArray.length;i++){
+                    particle2xxxYearArray[i].color='yellow';
+                    particlexx2xYearArray[i].color='yellow';
+                    particlexxx2YearArray[i].color='blue';
+                    particlex0xxYearArray[i].color='blue';
+             }
+             for(let i=0;i<30;i++){     //dessine les moteurs
+                     particleLineArray.push(new Particle(innerWidth/4+i*30-100,400,0, 0, 10, 'white', 'white',1));
+                     particleLineArray[i].update();
+            }
+            if(count%150<75)
+            {   
+                for(let i=0;i<particleLineArray.length;i++)
+                particleLineArray[i].color="white";
+            }else{
+                for(let i=0;i<particleLineArray.length;i++)
+                particleLineArray[i].color="rgba(0,255,255,0)";
+            }
+        }
+        count++; //compte le temps
+    }
+    
+    init();
+    stars();
+    animate();
+
+    window.addEventListener('resize',function(){
+        canvas.width = innerWidth;
+        canvas.height = innerHeight;
+        init();
+    })
+    </script>
+
+    </body>
+</html>

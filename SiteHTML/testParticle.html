@@ -232,32 +232,32 @@
                 //DESSINER UN DRONE BLANC
                 for(let i=0;i<6;i++){     //dessine les moteurs
                      if(i<3){
-                     particleDroneArray.push(new Particle(innerWidth/3+i*30+50,200,0, 0, 10, 'white', 'white',1));
+                     particleDroneArray.push(new Particle(1280/3+i*30+50,200,0, 0, 10, 'white', 'white',1));
                      particleDroneArray[i].update();
                      }else{
-                     particleDroneArray.push(new Particle(2*innerWidth/3-i*30+4+50,200,0, 0, 10, 'white', 'white',1));
+                     particleDroneArray.push(new Particle(2*1280/3-i*30+4+50,200,0, 0, 10, 'white', 'white',1));
                      particleDroneArray[i].update();}
                 }
-                particleDroneArray.push(new Particle(innerWidth/3+30+50,230,0, 0, 10, 'white', 'white',1));
+                particleDroneArray.push(new Particle(1280/3+30+50,230,0, 0, 10, 'white', 'white',1));
                 particleDroneArray[6].update();
-                particleDroneArray.push(new Particle(2*(innerWidth/3)-4*30+4+50,230,0, 0, 10, 'white', 'white',1));
+                particleDroneArray.push(new Particle(2*(1280/3)-4*30+4+50,230,0, 0, 10, 'white', 'white',1));
                 particleDroneArray[7].update();
                 //le corps -------------------------------------------------
                 for(let i=8;i<18;i++){     
-                     particleDroneArray.push(new Particle(innerWidth/3+(i-7)*31+50,260,0, 0, 10, 'white', 'white',1));
+                     particleDroneArray.push(new Particle(1280/3+(i-7)*31+50,260,0, 0, 10, 'white', 'white',1));
                      particleDroneArray[i].update();
                 }
                 for(let i=18;i<26;i++){     
-                     particleDroneArray.push(new Particle(innerWidth/3+(i-16)*31+50,290,0, 0, 10, 'white', 'white',1));
+                     particleDroneArray.push(new Particle(1280/3+(i-16)*31+50,290,0, 0, 10, 'white', 'white',1));
                      particleDroneArray[i].update();
                 }
                 //les trains d'atterissage -------------------------------------------------
                 for(let i=26;i<30;i++){
-                     particleDroneArray.push(new Particle(innerWidth/3+3*31+50,320+(i-26)*30,0, 0, 10, 'white', 'white',1));
+                     particleDroneArray.push(new Particle(1280/3+3*31+50,320+(i-26)*30,0, 0, 10, 'white', 'white',1));
                      particleDroneArray[i].update();
                 }
                 for(let i=30;i<34;i++){
-                     particleDroneArray.push(new Particle(2*innerWidth/3-6*31+50,320+(i-30)*30,0, 0, 10, 'white', 'white',1));
+                     particleDroneArray.push(new Particle(2*1280/3-6*31+50,320+(i-30)*30,0, 0, 10, 'white', 'white',1));
                      particleDroneArray[i].update();
                 }
 
@@ -271,118 +271,118 @@
         else if(count>1360){
         //DESSINER 2022 avec des points lumineux qui changent de couleur ------------------------
         // le premier 2 
-             particle2xxxYearArray.push(new Particle((innerWidth/4)-60,100,0, 0, 10, 'red', 'red',1));
+             particle2xxxYearArray.push(new Particle((1280/4)-60,100,0, 0, 10, 'red', 'red',1));
              particle2xxxYearArray[0].update();
-             particle2xxxYearArray.push(new Particle(innerWidth/4,100,0, 0, 10, 'red', 'red',1));
+             particle2xxxYearArray.push(new Particle(1280/4,100,0, 0, 10, 'red', 'red',1));
              particle2xxxYearArray[1].update();
-             particle2xxxYearArray.push(new Particle((innerWidth/4)+60,100,0, 0, 10, 'red', 'red',1));
+             particle2xxxYearArray.push(new Particle((1280/4)+60,100,0, 0, 10, 'red', 'red',1));
              particle2xxxYearArray[2].update();
 
-             particle2xxxYearArray.push(new Particle((innerWidth/4)+60,160,0, 0, 10, 'red', 'red',1));
+             particle2xxxYearArray.push(new Particle((1280/4)+60,160,0, 0, 10, 'red', 'red',1));
              particle2xxxYearArray[3].update();
 
-             particle2xxxYearArray.push(new Particle((innerWidth/4)+60,220,0, 0, 10, 'red', 'red',1));
+             particle2xxxYearArray.push(new Particle((1280/4)+60,220,0, 0, 10, 'red', 'red',1));
              particle2xxxYearArray[4].update();
-             particle2xxxYearArray.push(new Particle(innerWidth/4,220,0, 0, 10, 'red', 'red',1));
+             particle2xxxYearArray.push(new Particle(1280/4,220,0, 0, 10, 'red', 'red',1));
              particle2xxxYearArray[5].update();
-             particle2xxxYearArray.push(new Particle((innerWidth/4)-60,220,0, 0, 10, 'red', 'red',1));
+             particle2xxxYearArray.push(new Particle((1280/4)-60,220,0, 0, 10, 'red', 'red',1));
              particle2xxxYearArray[6].update();
 
-             particle2xxxYearArray.push(new Particle((innerWidth/4)-60,280,0, 0, 10, 'red', 'red',1));
+             particle2xxxYearArray.push(new Particle((1280/4)-60,280,0, 0, 10, 'red', 'red',1));
              particle2xxxYearArray[7].update();
 
-             particle2xxxYearArray.push(new Particle((innerWidth/4)-60,340,0, 0, 10, 'red', 'red',1));
+             particle2xxxYearArray.push(new Particle((1280/4)-60,340,0, 0, 10, 'red', 'red',1));
              particle2xxxYearArray[8].update();
-             particle2xxxYearArray.push(new Particle(innerWidth/4,340,0, 0, 10, 'red', 'red',1));
+             particle2xxxYearArray.push(new Particle(1280/4,340,0, 0, 10, 'red', 'red',1));
              particle2xxxYearArray[9].update();
-             particle2xxxYearArray.push(new Particle((innerWidth/4)+60,340,0, 0, 10, 'red', 'red',1));
+             particle2xxxYearArray.push(new Particle((1280/4)+60,340,0, 0, 10, 'red', 'red',1));
              particle2xxxYearArray[10].update();
 
         
              //dessine le 0
-             particlex0xxYearArray.push(new Particle(2*(innerWidth/4)-60-100,100,0, 0, 10, 'red', 'red',1));
+             particlex0xxYearArray.push(new Particle(2*(1280/4)-60-100,100,0, 0, 10, 'red', 'red',1));
              particlex0xxYearArray[0].update();
-             particlex0xxYearArray.push(new Particle(2*innerWidth/4-100,100,0, 0, 10, 'red', 'red',1));
+             particlex0xxYearArray.push(new Particle(2*1280/4-100,100,0, 0, 10, 'red', 'red',1));
              particlex0xxYearArray[1].update();
-             particlex0xxYearArray.push(new Particle(2*(innerWidth/4)+60-100,100,0, 0, 10, 'red', 'red',1));
+             particlex0xxYearArray.push(new Particle(2*(1280/4)+60-100,100,0, 0, 10, 'red', 'red',1));
              particlex0xxYearArray[2].update();
 
-             particlex0xxYearArray.push(new Particle(2*(innerWidth/4)+60-100,160,0, 0, 10, 'red', 'red',1));
+             particlex0xxYearArray.push(new Particle(2*(1280/4)+60-100,160,0, 0, 10, 'red', 'red',1));
              particlex0xxYearArray[3].update();
 
-             particlex0xxYearArray.push(new Particle(2*(innerWidth/4)+60-100,220,0, 0, 10, 'red', 'red',1));
+             particlex0xxYearArray.push(new Particle(2*(1280/4)+60-100,220,0, 0, 10, 'red', 'red',1));
              particlex0xxYearArray[4].update();
-             particlex0xxYearArray.push(new Particle(2*innerWidth/4-100-60,160,0, 0, 10, 'red', 'red',1));
+             particlex0xxYearArray.push(new Particle(2*1280/4-100-60,160,0, 0, 10, 'red', 'red',1));
              particlex0xxYearArray[5].update();
-             particlex0xxYearArray.push(new Particle(2*(innerWidth/4)-60-100,220,0, 0, 10, 'red', 'red',1));
+             particlex0xxYearArray.push(new Particle(2*(1280/4)-60-100,220,0, 0, 10, 'red', 'red',1));
              particlex0xxYearArray[6].update();
 
-             particlex0xxYearArray.push(new Particle(2*(innerWidth/4)-60-100,280,0, 0, 10, 'red', 'red',1));
+             particlex0xxYearArray.push(new Particle(2*(1280/4)-60-100,280,0, 0, 10, 'red', 'red',1));
              particlex0xxYearArray[7].update();
 
-             particlex0xxYearArray.push(new Particle(2*(innerWidth/4)-60-100,340,0, 0, 10, 'red', 'red',1));
+             particlex0xxYearArray.push(new Particle(2*(1280/4)-60-100,340,0, 0, 10, 'red', 'red',1));
              particlex0xxYearArray[8].update();
-             particlex0xxYearArray.push(new Particle(2*innerWidth/4-100,340,0, 0, 10, 'red', 'red',1));
+             particlex0xxYearArray.push(new Particle(2*1280/4-100,340,0, 0, 10, 'red', 'red',1));
              particlex0xxYearArray[9].update();
-             particlex0xxYearArray.push(new Particle(2*(innerWidth/4)+60-100,340,0, 0, 10, 'red', 'red',1));
+             particlex0xxYearArray.push(new Particle(2*(1280/4)+60-100,340,0, 0, 10, 'red', 'red',1));
              particlex0xxYearArray[10].update();
-             particlex0xxYearArray.push(new Particle(2*(innerWidth/4)+60-100,280,0, 0, 10, 'blue', 'blue',1));
+             particlex0xxYearArray.push(new Particle(2*(1280/4)+60-100,280,0, 0, 10, 'blue', 'blue',1));
              particlex0xxYearArray[11].update();
 
              //dessine le deuxieme 2
-             particlexx2xYearArray.push(new Particle(3*(innerWidth/4)-60-200,100,0, 0, 10, 'red', 'red',1));
+             particlexx2xYearArray.push(new Particle(3*(1280/4)-60-200,100,0, 0, 10, 'red', 'red',1));
              particlexx2xYearArray[0].update();
-             particlexx2xYearArray.push(new Particle(3*innerWidth/4-200,100,0, 0, 10, 'red', 'red',1));
+             particlexx2xYearArray.push(new Particle(3*1280/4-200,100,0, 0, 10, 'red', 'red',1));
              particlexx2xYearArray[1].update();
-             particlexx2xYearArray.push(new Particle(3*(innerWidth/4)+60-200,100,0, 0, 10, 'red', 'red',1));
+             particlexx2xYearArray.push(new Particle(3*(1280/4)+60-200,100,0, 0, 10, 'red', 'red',1));
              particlexx2xYearArray[2].update();
 
-             particlexx2xYearArray.push(new Particle(3*(innerWidth/4)+60-200,160,0, 0, 10, 'red', 'red',1));
+             particlexx2xYearArray.push(new Particle(3*(1280/4)+60-200,160,0, 0, 10, 'red', 'red',1));
              particlexx2xYearArray[3].update();
 
-             particlexx2xYearArray.push(new Particle(3*(innerWidth/4)+60-200,220,0, 0, 10, 'red', 'red',1));
+             particlexx2xYearArray.push(new Particle(3*(1280/4)+60-200,220,0, 0, 10, 'red', 'red',1));
              particlexx2xYearArray[4].update();
-             particlexx2xYearArray.push(new Particle(3*innerWidth/4-200,220,0, 0, 10, 'red', 'red',1));
+             particlexx2xYearArray.push(new Particle(3*1280/4-200,220,0, 0, 10, 'red', 'red',1));
              particlexx2xYearArray[5].update();
-             particlexx2xYearArray.push(new Particle(3*(innerWidth/4)-60-200,220,0, 0, 10, 'red', 'red',1));
+             particlexx2xYearArray.push(new Particle(3*(1280/4)-60-200,220,0, 0, 10, 'red', 'red',1));
              particlexx2xYearArray[6].update();
 
-             particlexx2xYearArray.push(new Particle(3*(innerWidth/4)-60-200,280,0, 0, 10, 'red', 'red',1));
+             particlexx2xYearArray.push(new Particle(3*(1280/4)-60-200,280,0, 0, 10, 'red', 'red',1));
              particlexx2xYearArray[7].update();
 
-             particlexx2xYearArray.push(new Particle(3*(innerWidth/4)-60-200,340,0, 0, 10, 'red', 'red',1));
+             particlexx2xYearArray.push(new Particle(3*(1280/4)-60-200,340,0, 0, 10, 'red', 'red',1));
              particlexx2xYearArray[8].update();
-             particlexx2xYearArray.push(new Particle(3*innerWidth/4-200,340,0, 0, 10, 'red', 'red',1));
+             particlexx2xYearArray.push(new Particle(3*1280/4-200,340,0, 0, 10, 'red', 'red',1));
              particlexx2xYearArray[9].update();
-             particlexx2xYearArray.push(new Particle(3*(innerWidth/4)+60-200,340,0, 0, 10, 'red', 'red',1));
+             particlexx2xYearArray.push(new Particle(3*(1280/4)+60-200,340,0, 0, 10, 'red', 'red',1));
              particlexx2xYearArray[10].update();
 
              //dessine le troisieme 2
-             particlexxx2YearArray.push(new Particle(4*(innerWidth/4)-60-300,100,0, 0, 10, 'red', 'red',1));
+             particlexxx2YearArray.push(new Particle(4*(1280/4)-60-300,100,0, 0, 10, 'red', 'red',1));
              particlexxx2YearArray[0].update();
-             particlexxx2YearArray.push(new Particle(4*innerWidth/4-300,100,0, 0, 10, 'red', 'red',1));
+             particlexxx2YearArray.push(new Particle(4*1280/4-300,100,0, 0, 10, 'red', 'red',1));
              particlexxx2YearArray[1].update();
-             particlexxx2YearArray.push(new Particle(4*(innerWidth/4)+60-300,100,0, 0, 10, 'red', 'red',1));
+             particlexxx2YearArray.push(new Particle(4*(1280/4)+60-300,100,0, 0, 10, 'red', 'red',1));
              particlexxx2YearArray[2].update();
 
-             particlexxx2YearArray.push(new Particle(4*(innerWidth/4)+60-300,160,0, 0, 10, 'red', 'red',1));
+             particlexxx2YearArray.push(new Particle(4*(1280/4)+60-300,160,0, 0, 10, 'red', 'red',1));
              particlexxx2YearArray[3].update();
 
-             particlexxx2YearArray.push(new Particle(4*(innerWidth/4)+60-300,220,0, 0, 10, 'red', 'red',1));
+             particlexxx2YearArray.push(new Particle(4*(1280/4)+60-300,220,0, 0, 10, 'red', 'red',1));
              particlexxx2YearArray[4].update();
-             particlexxx2YearArray.push(new Particle(4*innerWidth/4-300,220,0, 0, 10, 'red', 'red',1));
+             particlexxx2YearArray.push(new Particle(4*1280/4-300,220,0, 0, 10, 'red', 'red',1));
              particlexxx2YearArray[5].update();
-             particlexxx2YearArray.push(new Particle(4*(innerWidth/4)-60-300,220,0, 0, 10, 'red', 'red',1));
+             particlexxx2YearArray.push(new Particle(4*(1280/4)-60-300,220,0, 0, 10, 'red', 'red',1));
              particlexxx2YearArray[6].update();
 
-             particlexxx2YearArray.push(new Particle(4*(innerWidth/4)-60-300,280,0, 0, 10, 'red', 'red',1));
+             particlexxx2YearArray.push(new Particle(4*(1280/4)-60-300,280,0, 0, 10, 'red', 'red',1));
              particlexxx2YearArray[7].update();
 
-             particlexxx2YearArray.push(new Particle(4*(innerWidth/4)-60-300,340,0, 0, 10, 'red', 'red',1));
+             particlexxx2YearArray.push(new Particle(4*(1280/4)-60-300,340,0, 0, 10, 'red', 'red',1));
              particlexxx2YearArray[8].update();
-             particlexxx2YearArray.push(new Particle(4*innerWidth/4-300,340,0, 0, 10, 'red', 'red',1));
+             particlexxx2YearArray.push(new Particle(4*1280/4-300,340,0, 0, 10, 'red', 'red',1));
              particlexxx2YearArray[9].update();
-             particlexxx2YearArray.push(new Particle(4*(innerWidth/4)+60-300,340,0, 0, 10, 'red', 'red',1));
+             particlexxx2YearArray.push(new Particle(4*(1280/4)+60-300,340,0, 0, 10, 'red', 'red',1));
              particlexxx2YearArray[10].update();
 
              for(let i=0;i<particle2xxxYearArray.length;i++){
@@ -391,8 +391,8 @@
                     particlexxx2YearArray[i].color='blue';
                     particlex0xxYearArray[i].color='blue';
              }
-             for(let i=0;i<30;i++){     //dessine les moteurs
-                     particleLineArray.push(new Particle(innerWidth/4+i*30-100,400,0, 0, 10, 'white', 'white',1));
+             for(let i=0;i<30;i++){   //dessine la ligne
+                     particleLineArray.push(new Particle(1280/4+i*30-100,400,0, 0, 10, 'white', 'white',1));
                      particleLineArray[i].update();
             }
             if(count%150<75)

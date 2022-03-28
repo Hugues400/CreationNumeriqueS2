@@ -17,6 +17,7 @@ class Header extends React.Component {
                     <NavLink href="home" className="link-nav">Pourquoi avoir choisi ce sujet ?</NavLink>
                     <NavLink href="home" className="link-nav">About us</NavLink>
                 </Navbar>
+                <a class="button" style={{color:red}} href="SiteHTML/testParticle.html">Formation</a>
             </div>
             
         </div>

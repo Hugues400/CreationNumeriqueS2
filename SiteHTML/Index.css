@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(226, 220, 220);
+    background-color: rgb(187, 177, 177)!important;
 }
 
 header{
@@ -45,7 +45,7 @@ content{
 
 video{
     width: 70% !important;
-    height: auto !important;
+    height: 50% !important;
     margin: 0 auto;
     display: block;
 }

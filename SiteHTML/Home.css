@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(226, 220, 220);
+    background-color: rgb(187, 177, 177)!important;
 }
 
 header{
@@ -83,6 +83,7 @@ table{
 .t2{
 
     text-align: left;
+    padding-top: 50px!important;
 }
 
 footer{

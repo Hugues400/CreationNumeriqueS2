@@ -4,8 +4,9 @@ body{
 
 header{
     margin: 0;
-    height: 1;
-
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
     padding: 0;
     background-image: url(téléchargement2.jpg);
     text-align:center;
